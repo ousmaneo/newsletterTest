@@ -1,0 +1,19 @@
+<td>
+  <input type="checkbox" ng-click="onSelect()" value="{{ id }}" />
+</td>
+<td>{{ firstname }} {{ lastname }}, age:{{ dob | dateToBirthdate }}</td>
+<td>
+  <button type="button" class="btn btn-primary" ng-click="onShow()">
+    Show
+  </button>
+</td>
+<td>
+  <a class="btn btn-info" ui-sref="userdetail({ userId: id })">
+    Edit
+  </a>
+</td>
+<td>
+  <button type="button" class="btn btn-danger" ng-click="onDelete()">
+    Delete
+  </button>
+</td>

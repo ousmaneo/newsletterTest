@@ -1,0 +1,52 @@
+<h1>Users Liste</h1>
+
+<button
+  ng-disabled="$ctrl.selectedItem.length<1"
+  ng-click="$ctrl.download()"
+  class="btn btn-primary"
+>
+  Download
+</button>
+<button
+  ng-disabled="$ctrl.selectedItem.length<1"
+  ng-click="$ctrl.deleteAllSelected()"
+  class="btn btn-danger"
+>
+  Delete
+</button>
+<div ng-show="$ctrl.selectedItem.length>=1">
+  Selected count: {{ $ctrl.selectedItem.length }}
+</div>
+<table class="table table-bordered table-striped">
+  <tr
+    user-row
+    ng-repeat="user in $ctrl.users.slice((($ctrl.currentPage-1)*$ctrl.itemsPerPage), (($ctrl.currentPage)*$ctrl.itemsPerPage))"
+    id="{{ user.id }}"
+    firstname="{{ user.firstName }}"
+    lastname="{{ user.lastName }}"
+    dob="{{ user.dateOfBirth }}"
+    on-delete="$ctrl.deleteUser(user.id)"
+    on-show="$ctrl.showUser(user)"
+    on-select="$ctrl.selectUser(user.id)"
+  ></tr>
+</table>
+
+<ul
+  uib-pagination
+  total-items="$ctrl.totalItems"
+  ng-model="$ctrl.currentPage"
+  items-per-page="$ctrl.itemsPerPage"
+  ng-change="$ctrl.pageChanged()"
+></ul>
+<script type="text/ng-template" id="showUser.html">
+  <div class="modal-header">
+      <h4 class="modal-title" id="modal-title">User: {{ ctrl.user.id}}</h4>
+  </div>
+  <div class="modal-body" id="modal-body">
+      <div>{{ ctrl.user.firstName }} {{ ctrl.user.lastName }}, age:{{ ctrl.user.dateOfBirth | dateToBirthdate }}</div>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-primary" type="button" ng-click="ctrl.ok()">OK</button>
+
+  </div>
+</script>

@@ -1,0 +1,37 @@
+{
+  "name": "fe-test",
+  "version": "1.0.0",
+  "description": "FE test",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Newsletter2go",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.7.0",
+    "browser-sync": "^2.26.3",
+    "canonical-path": "^1.0.0",
+    "del": "^4.1.0",
+    "gulp": "^4.0.0",
+    "gulp-angular-templatecache": "^2.2.6",
+    "gulp-concat": "^2.6.1",
+    "gulp-debug": "^4.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-jshint": "^2.0.0",
+    "gulp-ng-annotate": "^2.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "gulp-wrap": "^0.15.0",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.1.0",
+    "path": "^0.12.7",
+    "yargs": "^13.2.2"
+  },
+  "dependencies": {
+    "angular": "^1.7.8",
+    "angular-ui-bootstrap": "^2.5.6",
+    "angular-ui-router": "^1.0.22",
+    "bootstrap-sass": "^3.4.1"
+  }
+}
